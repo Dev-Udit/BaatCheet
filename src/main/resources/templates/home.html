@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BaatCheet | Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Dashboard</h2>
+    <p class="subtitle">Select your practice mode</p>
+
+    <div class="user-info">
+        <span style="color: var(--text-muted); font-size: 0.9em;">Welcome back,</span><br>
+        <strong style="color: var(--primary); font-size: 1.2em; display: inline-block; margin-top: 4px;" th:text="${name}">User Name</strong>
+    </div>
+
+    <div class="menu">
+        <a href="/audio">🎧 Audio Practice</a>
+        <a href="/video">📹 Video Practice</a>
+        <a href="/ai">🤖 AI Language Buddy</a>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="logout-btn">Sign Out</button>
+    </form>
+</div>
+</body>
+</html>

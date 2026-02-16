@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BaatCheet | Video Practice</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body { height: 100vh; overflow: hidden; display: flex; flex-direction: column; background: var(--bg-dark); }
+        .top { padding: 20px; text-align: center; color: var(--text-main); font-weight: 600; font-size: 1.1rem; background: var(--card-bg); border-bottom: 1px solid var(--border-color); z-index: 10; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .videos { flex: 1; display: flex; gap: 30px; padding: 30px; justify-content: center; align-items: center; }
+
+        .video-box { position: relative; flex: 1; max-width: 700px; height: 85%; background: #000; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+        video { width: 100%; height: 100%; object-fit: cover; }
+
+        .label { position: absolute; bottom: 20px; left: 20px; background: rgba(15, 23, 42, 0.8); color: var(--text-main); font-weight: 500; padding: 8px 16px; border-radius: 12px; font-size: 0.9rem; border: 1px solid var(--border-color); backdrop-filter: blur(8px); }
+
+        .controls { height: 100px; display: flex; justify-content: center; gap: 25px; align-items: center; background: var(--card-bg); border-top: 1px solid var(--border-color); box-shadow: 0 -4px 20px rgba(0,0,0,0.2); }
+        .btn-round { width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: all 0.2s ease; }
+        .mute-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid var(--border-color); }
+        .mute-btn:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
+        .end-btn { background: var(--danger); }
+        .end-btn:hover { background: var(--danger-hover); transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(239, 68, 68, 0.6); }
+    </style>
+</head>
+<body>
+<div class="top" id="status">Searching for a partner...</div>
+<div class="videos">
+    <div class="video-box">
+        <div class="label" id="myNameTag" th:text="${userName}">You</div>
+        <video id="localVideo" autoplay muted playsinline></video>
+    </div>
+    <div class="video-box">
+        <div class="label" id="partnerName">Partner</div>
+        <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+</div>
+<div class="controls">
+    <button id="muteBtn" class="btn-round mute-btn" onclick="toggleMute()" title="Mute/Unmute Microphone">🎤</button>
+    <button id="camBtn" class="btn-round mute-btn" onclick="toggleCamera()" title="Turn Camera On/Off">📷</button>
+
+    <button class="btn-round end-btn" onclick="endCall()" title="End Call">❌</button>
+</div>
+<input type="hidden" id="myName" th:value="${userName}">
+<script src="/video.js"></script>
+</body>
+</html>

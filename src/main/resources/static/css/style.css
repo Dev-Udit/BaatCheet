@@ -1,0 +1,121 @@
+:root {
+    /* Modern Slate Dark Theme Variables */
+    --bg-dark: #0f172a;        /* Deep slate background */
+    --card-bg: #1e293b;        /* Slightly lighter slate for cards */
+    --primary: #6366f1;        /* Vibrant Indigo */
+    --primary-hover: #4f46e5;
+    --text-main: #f8fafc;      /* Crisp off-white */
+    --text-muted: #94a3b8;     /* Soft slate gray */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.menu a, .btn-primary {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+    padding: 15px;
+    border-radius: 14px;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 1.05rem;
+}
+
+.menu a:hover, .btn-primary:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(99, 102, 241, 0.6);
+}
+
+.user-info {
+    margin-bottom: 25px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+}
+
+.logout-btn {
+    margin-top: 25px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.logout-btn:hover {
+    color: var(--danger);
+    text-decoration: underline;
+}
+
+/* Specific styling for the Google Login button */
+.google-btn {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    border: none !important;
+}
+
+.google-btn:hover {
+    background: #f8fafc !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.3) !important;
+}
