@@ -124,11 +124,6 @@ ollama run llama3
 ./mvnw spring-boot:run
 ```
 
-App runs at:
-
-👉 http://localhost:8080
-
----
 
 ## 📁 Project Structure
 
